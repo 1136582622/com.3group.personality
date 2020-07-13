@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="mapper.UserDao">
+    <resultMap id="UserResult" type="User">
+		<result property="userid" column="userid"></result>
+		<result property="name" column="name"></result>
+		<result property="sex" column="sex"></result>
+		<result property="phone" column="phone"></result>
+		<result property="password" column="password"></result>
+		<result property="photo" column="photo"></result>
+	</resultMap>
+	<!--获得商品信息并分页 -->
+	<select id="getUserPager" resultType="User">
+		select userid,name,sex,phone,photo from t_user limit #{0},#{1}
+	</select>
+	<select id="getUserByPhone" resultMap="User">
+		select * from t_user where phone=#{phone};
+	</select>
+	<!--  -->
+	<select id="getUserById" parameterType="int" resultType="User">
+		select
+		userid,name,sex,phone,photo from t_user where userid=#{userid}
+	</select>
+	<!--获得用户总数 -->
+	<select id="getUserCount" resultType="int">
+		select count(*) from t_user
+	</select>
+	<!--注册用户 -->
+	<insert id="insert" parameterType="User">
+		insert into
+		t_user(userid,name,sex,phone,password,photo) values(#{userid},#{name},#{sex},#{phone},#{password},#{photo});
+	</insert>
+	<!-- 删除用户 -->
+	<delete id="delete">
+		delete from t_user where userid=#{userid}
+	</delete>
+	<!-- 修改个人信息 -->
+	<update id="updateInfo" parameterType="User">
+		update t_user <set>
+		<if test="name!=null and name!=''">
+		name=#{name}
+		</if>
+		<if test="sex!=null and sex!=''">
+			sex=#{sex}
+		</if>
+		<if test="photo!=null and photo!=''">
+			photo=#{photo}
+		</if>
+		<if test="password!=null and password!=''">
+			password=#{password}
+		</if>
+	</set>
+        where userid=#{userid}
+	</update>
+</mapper>
