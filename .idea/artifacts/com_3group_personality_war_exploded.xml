@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="com.3group.personality:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/com_3group_personality_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="com.3group.personality/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="com.3group.personality" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
