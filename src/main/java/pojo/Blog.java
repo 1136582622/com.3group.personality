@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Blog implements Serializable {
-    private int blogid;
-    private String title;
-    private String content;
+    private int blogid;  //id
+    private String title; //标题
+    private String content; //内容
     private List<String> imgName = new ArrayList<String>();
     private String imgNameStr;
-    private String time;
+    private String time;    //发表时间
     private String type;   //类型
     private int commentNum;//评论数
     private int heatNum;  //热度

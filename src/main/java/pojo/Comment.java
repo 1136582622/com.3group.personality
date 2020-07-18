@@ -3,11 +3,11 @@ package pojo;
 import java.io.Serializable;
 
 public class Comment implements Serializable {
-    private int id;
-    private String content;
-    private String time;
-    private Blog blog;
-    private User user;
+    private int id;  //id
+    private String content; //内容
+    private String time; //发送时间
+    private Blog blog; //博客实体
+    private User user; //用户实体
 
     public int getId() {
         return id;

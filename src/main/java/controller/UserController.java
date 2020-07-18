@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
+//快捷键Alt+Eenter,Alt+Insert
 /*@Controller*/
 @RestController//相当于controller+responsebody,下面的方法中返回值给安卓端就不用加 @ResponseBody
 @RequestMapping("/user")
@@ -47,10 +48,10 @@ public class UserController {
 
     @RequestMapping("/updateInfo")
     public String updateInfo(@RequestParam Map<String, String> map) {
-        String e = map.toString();
         String strUser = map.get("strUser");
         Gson gson = new Gson();
         User user = gson.fromJson(strUser, User.class);
+
         userService.updateInfo(user);
         return "success";
     }
@@ -68,13 +69,9 @@ public class UserController {
         return "error";
     }
 
-    @RequestMapping("/test")
-    @ResponseBody
-    public String testStr() {
-        return "123";
-    }
 
 
+    /*******getter and setter*******/
     public String getStrUser() {
         return strUser;
     }

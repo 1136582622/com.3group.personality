@@ -21,7 +21,7 @@
 	</settings>
 	<typeAliases>
 		<!--指定一个包名，Mybatis会自动搜索需要的JavaBean-->
-		<package name="entities" />
+		<package name="pojo" />
 	</typeAliases>
 
 	<!--<environments default="development">
