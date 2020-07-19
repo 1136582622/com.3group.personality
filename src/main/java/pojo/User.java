@@ -9,8 +9,8 @@ public class User implements Serializable {
     private String sex;   //性别
     private String phone;  /**电话，和id一致用电话号码登录**/
     private String password; //密码
-    private String introduction;//简介
     private String photo;  //头像
+    private String introduction;//简介
 
     public String getUserid() {
         return userid;
