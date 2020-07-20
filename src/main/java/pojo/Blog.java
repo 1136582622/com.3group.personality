@@ -14,9 +14,8 @@ public class Blog implements Serializable {
     private String type;   //类型
     private int commentNum;//评论数
     private int heatNum;  //热度
+    private User user;  //用户实体
 
-
-    private User user;
     public int getBlogid() {
         return blogid;
     }
